@@ -28,3 +28,9 @@ module.exports.findbyhostid_event =function(hostId,callback){
     callback(eventdata);
   });
 }
+
+module.exports.findbyassetid_event =function(assetid,callback){
+  dao.findbyassetid_event(assetid,function(eventdata){
+    callback(eventdata);
+  });
+}

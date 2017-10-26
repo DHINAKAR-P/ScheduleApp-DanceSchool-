@@ -51,3 +51,15 @@ module.exports.findbyhostid_event =function(hostId,callback){
       callback(event_data);
     });
 }
+
+
+module.exports.findbyassetid_event =function(assetId,callback){
+  console.log("--asset Id ---- > ",assetId);
+  eventdetails.find({ assetid: assetId },'title filledslot availableslot description eventtype status business_id',function (err, event_data) {
+     if (err) {
+        res.send(err);
+      }
+      console.log("---event by asset ID--- > ",event_data);
+      callback(event_data);
+    });
+}

@@ -12,7 +12,7 @@ var eventdata = new Schema({
     status:String,
     
     business_id:{ type: Schema.Types.ObjectId, ref: 'Business'},
-    //assetid:{ type: Schema.Types.ObjectId, ref: 'Asset'},
+    assetid:{ type: Schema.Types.ObjectId, ref: 'Asset'},
     host:{ type: Schema.Types.ObjectId, ref: 'User'},
 
     });

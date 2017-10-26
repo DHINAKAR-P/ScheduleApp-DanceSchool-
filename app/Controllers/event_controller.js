@@ -36,3 +36,11 @@ module.exports.findbyhostid_event=function(req,res){
     res.json(eventdata);
     })
 }
+
+
+module.exports.findbyassetid_event=function(req,res){
+    var assetid =req.params.assetid;
+    service.findbyassetid_event(assetid,function(eventdata){
+    res.json(eventdata);
+    })
+}

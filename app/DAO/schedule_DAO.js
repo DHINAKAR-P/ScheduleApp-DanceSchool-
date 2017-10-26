@@ -1,12 +1,12 @@
 var userdetails = require('../Models/schedule_model');
 
 module.exports.create_schedule = function(sch_detail, callback) {
-  var company = new userdetails(sch_detail);
-    company.save(function(err) {
+  var schedule = new userdetails(sch_detail);
+  schedule.save(function(err) {
     if (err) {
       res.send(err);
     }
-    callback(sch_detail);
+    callback(schedule);
   });
 };
 

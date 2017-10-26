@@ -1,13 +1,13 @@
 var contactdetails = require('../Models/contact_model');
 
 module.exports.create_contact = function(sch_detail, callback) {
-  var company = new contactdetails(sch_detail);
+  var contact = new contactdetails(sch_detail);
 
-  company.save(function(err) {
+  contact.save(function(err) {
     if (err) {
       res.send(err);
     }
-    callback(sch_detail);
+    callback(contact);
   });
 };
 

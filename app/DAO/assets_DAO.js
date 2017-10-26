@@ -2,13 +2,13 @@ var assetdetails = require('../Models/assets_model');
 
 
 module.exports.create_asset = function(sch_detail, callback) {
-  var company = new assetdetails(sch_detail);
+  var asset = new assetdetails(sch_detail);
 console.log(sch_detail)
-  company.save(function(err) {
+asset.save(function(err) {
     if (err) {
       res.send(err);
     }
-    callback(sch_detail);
+    callback(asset);
   });
 };
 
