@@ -27,3 +27,10 @@ module.exports.getall_asset = function(req,res){
         res.json(detail);
     })
 }
+
+module.exports.findbybusinessid_asset=function(req,res){
+    var business_id =req.params.business_id;
+    service.findbybusinessid_asset(business_id,function(asset){
+    res.json(asset);
+    })
+}

@@ -2,13 +2,13 @@ var reservationdetails = require('../Models/Reservation_model');
 
 module.exports.create_reservation = function(reservation_detail, callback) {
  
-  var company = new reservationdetails(reservation_detail);
+  var reservation = new reservationdetails(reservation_detail);
 
-  company.save(function(err) {
+  reservation.save(function(err) {
     if (err) {
       res.send(err);
     }
-    callback(reservation_detail);
+    callback(reservation);
   });
 };
 
@@ -44,4 +44,25 @@ module.exports.delete_reservation = function(reservation_detail_id, callback) {
   });
 };
 
+module.exports.findbyparticipent_reservation =function(participentid,callback){
+  console.log("--participent id ---- > ",participentid);
+  reservationdetails.find({ participents: participentid },'location starttime endtime eventid participents',function (err, reservation_detail) {
+     if (err) {
+        res.send(err);
+      }
+      console.log("---reservation by participent_id ID--- > ",reservation_detail);
+      callback(reservation_detail);
+    });
+}
 
+
+module.exports.findbyeventid_reservation =function(eventid,callback){
+  console.log("--participent id ---- > ",eventid);
+  reservationdetails.find({ eventid: eventid },'location starttime endtime eventid participents',function (err, reservation_detail) {
+     if (err) {
+        res.send(err);
+      }
+      console.log("---reservation by participent_id ID--- > ",reservation_detail);
+      callback(reservation_detail);
+    });
+}

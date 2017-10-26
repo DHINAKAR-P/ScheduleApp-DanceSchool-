@@ -23,3 +23,15 @@ module.exports.getall_reservation = function(callback) {
       callback(reservation_detail);
     });
 }
+
+module.exports.findbyparticipent_reservation =function(participent_id,callback){
+  dao.findbyparticipent_reservation(participent_id,function(reservation_detail){
+    callback(reservation_detail);
+  });
+}
+
+module.exports.findbyeventid_reservation =function(event_id,callback){
+  dao.findbyeventid_reservation(event_id,function(reservation_detail){
+    callback(reservation_detail);
+  });
+}

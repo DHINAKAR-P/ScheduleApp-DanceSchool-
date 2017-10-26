@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var contactSchool=require('./contact_model')
 var Schema = mongoose.Schema;
 
 var businessdetails_schema = new mongoose.Schema({

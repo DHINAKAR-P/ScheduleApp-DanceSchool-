@@ -6,5 +6,6 @@ router.post("/create_asset",controller.create_asset);
 router.put("/update_asset",controller.update_asset);
 router.delete("/delete_asset/:id",controller.delete_asset);
 router.get("/getall_asset",controller.getall_asset);
+router.get("/findbybusinessid_asset/:business_id",controller.findbybusinessid_asset);
 
 module.exports = router;

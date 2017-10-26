@@ -3,7 +3,7 @@ var assetdetails = require('../Models/assets_model');
 
 module.exports.create_asset = function(sch_detail, callback) {
   var company = new assetdetails(sch_detail);
-
+console.log(sch_detail)
   company.save(function(err) {
     if (err) {
       res.send(err);
@@ -42,3 +42,14 @@ module.exports.delete_asset = function(sch_detail_id, callback) {
     callback({message: "removed",sch_detail_id:sch_detail_id});
   });
 };
+
+module.exports.findbybusinessid_asset =function(business_id,callback){
+  console.log("--business id ---- > ",business_id);
+  assetdetails.find({ businessid: business_id },'assetname assettype assetcategory associatedcost businessid',function (err, asset_detail) {
+     if (err) {
+        res.send(err);
+      }
+      console.log("---asset by business_id ID--- > ",asset_detail);
+      callback(asset_detail);
+    });
+}

@@ -23,3 +23,9 @@ module.exports.getall_asset = function(callback) {
     callback(asset_detail);
   });
 }
+
+module.exports.findbybusinessid_asset =function(business_id,callback){
+  dao.findbybusinessid_asset(business_id,function(asset_detail){
+    callback(asset_detail);
+  });
+}
