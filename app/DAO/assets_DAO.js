@@ -1,5 +1,6 @@
 var assetdetails = require('../Models/assets_model');
 
+
 module.exports.create_asset = function(sch_detail, callback) {
   var company = new assetdetails(sch_detail);
 
@@ -41,6 +42,3 @@ module.exports.delete_asset = function(sch_detail_id, callback) {
     callback({message: "removed",sch_detail_id:sch_detail_id});
   });
 };
-
-
-

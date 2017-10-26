@@ -7,4 +7,5 @@ api.use("/contacts",routers.contact_Router);
 api.use("/user",routers.user_Router);
 api.use("/schedule",routers.schedule_Router);
 api.use("/event",routers.event_Router);
+api.use("/reservation",routers.Reservation_Router);
 module.exports = api;
